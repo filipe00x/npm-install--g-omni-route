@@ -56,20 +56,24 @@ intro_new = (intro[: intro.index("<w:pPr>")] + ppr.replace("</w:pPr>", retrato +
              + R("A Figura 3 representa o fluxo na notação BPMN (")
              + R("Business Process Model and Notation", True)
              + R("), padrão adotado por ferramentas de modelagem como o Bizagi Modeler. Cada participante ocupa "
-                 "uma raia horizontal, e as atividades se encadeiam da esquerda para a direita. Na sequência, o "
-                 "Quadro 4 apresenta a matriz de responsabilidades (RACI) correspondente.")
+                 "uma raia horizontal, e as atividades se encadeiam da esquerda para a direita, agrupadas nas cinco "
+                 "fases do dia indicadas no topo do diagrama. Na sequência, o Quadro 4 apresenta a matriz de "
+                 "responsabilidades (RACI) correspondente.")
              + "</w:p>")
 
 leit = paras[idx_leitura].group(0)
 ppr_l = re.search(r"<w:pPr>.*?</w:pPr>", leit, re.S).group(0)
 leit_new = (leit[: leit.index("<w:pPr>")] + ppr_l
-            + R("Na Figura 3, os retângulos representam as atividades; os losangos, as decisões; e os círculos, "
-                "os eventos de início, de tempo e de fim. A decisão do ComPel evidencia a gestão por exceção: o "
-                "veto só é registrado quando há impedimento; caso contrário, a relação segue diretamente para o "
-                "ComCia (Asp). Os eventos de tempo marcam os dois horários fixos do processo, o encerramento dos "
-                "pedidos às 12h30 e a liberação a partir das 17h00. Tudo o que ocorre entre eles acontece durante "
-                "a rotina, sem exigir deslocamento do aspirante, que executa apenas duas atividades: registrar o "
-                "pedido e consultar o resultado.")
+            + R("Na Figura 3, os retângulos representam as atividades, com o prazo de cada uma em destaque; os "
+                "losangos, as decisões; os círculos, os eventos de início, de tempo e de fim; e o cilindro, a "
+                "planilha de controle, alimentada na conferência dos pedidos e na baixa do saldo. O ícone no canto "
+                "de cada atividade indica se ela é executada por uma pessoa ou se consiste no envio de informação. "
+                "A decisão do ComPel evidencia a gestão por exceção: o veto só é registrado quando há impedimento; "
+                "caso contrário, caminho marcado como padrão, a relação segue diretamente para o ComCia (Asp). Os "
+                "eventos de tempo marcam os dois horários fixos do processo, o encerramento dos pedidos às 12h30 e "
+                "a liberação a partir das 17h00. Tudo o que ocorre entre eles acontece durante a rotina, sem exigir "
+                "deslocamento do aspirante, que executa apenas duas atividades: registrar o pedido e consultar o "
+                "resultado.")
             + "</w:p>")
 
 out, last = [], 0
